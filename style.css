@@ -1,0 +1,2451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #181818;
+    transition: 1s ease;
+}
+.title1{
+    position: absolute;
+    font-size: 90px;
+    text-transform: uppercase;
+    font-style: italic;
+    left: 10%;
+    top: 10%;
+    transition: 1s ease;
+    color: white;
+    text-shadow:  -7px 7px 5px black;
+}
+.title2{
+    position: absolute;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 20px;
+    color: white;
+    border-radius: 120px;
+    right: 5%;
+    top: 28%;
+    transition: 1s ease;
+    box-shadow:  0 15px 20px rgba(0, 0, 0, 0.208);
+
+    &::before{
+        position: absolute;
+        content: '';
+        width: 12%;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+        left: -12%;
+        top: 50%;
+    }
+}
+.Phone_container {
+    width: 400px;
+    height: 80vh;
+    margin: 100px auto;
+    border-radius: 70px;
+    border: 15px solid rgb(42, 42, 42);
+    background-color: black;
+    box-shadow: 0 15px 40px black;
+    transform: rotateY(-30deg) rotateX(20deg) scale(1);
+    transition: 1s ease;
+}
+@media(max-width:552px){
+  body{
+    height: 100dvh;
+  }
+  .Phone_container{
+    width: 75%;
+    border-radius: 40px;
+    border: 10px solid rgb(42, 42, 42);
+    margin: 60px auto;
+  }
+  .title1,.title2{
+    display: none;
+  }
+}
+.phone_buttons {
+    width: auto;
+    position: absolute;
+    height: 76%;
+    /* background-color: gray; */
+    top: 60px;
+    right: -4%;
+    padding: 40px 1px;
+    /* border-top-right-radius: 120px; */
+    /* border-bottom-right-radius: 120px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+        padding: 30px 5px;
+        border-radius: 20px;
+        border: 1px solid rgb(80, 79, 79);
+        background-color: rgb(24, 24, 24);
+        cursor: pointer;
+
+        &:last-child {
+            padding: 20px 5px;
+        }
+    }
+}
+
+.phone_box {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    border: 10px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-image: url(https://wallpapercave.com/wp/wp7037819.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    box-shadow: inset 0 0 60px black;
+    overflow: hidden;
+}
+@media(max-width:552px){
+  .phone_box{
+    border-radius: 35px;
+  }
+}
+
+.phone_bang {
+    position: absolute;
+    top: 0;
+    z-index: 99999999999999;
+    width: 43%;
+    height: 35px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 35%;
+        height: 6px;
+        border-radius: 5px;
+        background-color: rgb(46, 45, 45);
+    }
+
+    &::after {
+        content: '';
+        width: 15px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgb(34, 34, 34);
+        position: absolute;
+        right: 10%;
+        border: 1px solid rgb(76, 76, 76);
+    }
+}
+@media(max-width:552px){
+  .phone_bang{
+    width: 45%;
+    left: 27.5%;
+    height: 25px;
+
+    &::before{
+      width: 30%;
+    }
+    &::after{
+      width: 10px;
+      right: 15%;
+    }
+  }
+}
+.time_wifi {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 25px;
+
+    @media(max-width:552px){
+      padding: 12px;
+    }
+
+    &>span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        gap: 7px;
+        color: white;
+        @media(max-width:552px){
+          font-size: 10px;
+        }
+    }
+}
+
+.Blockscreen {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    transition: 1s ease;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(https://wallpapercave.com/wp/wp7037819.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0 0 0;
+    box-shadow: inset 0 0 60px black;
+    cursor: pointer;
+
+    .fon {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 9999999999;
+        background-color: black;
+        top: 0;
+    }
+
+    h1 {
+        font-size: 80px;
+        color: white;
+        font-weight: 300;
+        text-align: center;
+        @media(max-width:552px){
+          font-size: 45px;
+        }
+    }
+
+    span {
+        color: white;
+        font-size: 18px;
+        @media(max-width:552px){
+          font-size: 14px;
+        }
+    }
+}
+
+@keyframes showblock {
+    from {
+        background-color: black;
+    }
+
+    to {
+        background-color: transparent;
+        display: none;
+    }
+}
+
+@keyframes hideblock {
+    from {
+        background-color: transparent;
+        display: none;
+    }
+
+    to {
+        background-color: black;
+    }
+}
+
+.camera_light {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: relative;
+
+    @media(max-width:552px){
+      padding: 10px;
+    }
+
+    &::before {
+        content: '';
+        left: 30%;
+        position: absolute;
+        width: 40%;
+        height: 4px;
+        border-radius: 5px;
+        background-color: white;
+        top: 88%;
+    }
+
+    button {
+        width: 45px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        font-size: 22px;
+        cursor: pointer;
+        background-color: rgba(43, 42, 42, 0.609);
+        color: white;
+        display: grid;
+        place-items: center;
+        border: none;
+        @media(max-width:552px){
+          width: 30px;
+          font-size: 16px;
+        }
+    }
+
+    span {
+        color: white;
+    }
+}
+
+.Weadther_App {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgb(76, 76, 255);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.446);
+    animation: showapps .5s ease forwards;
+    animation-delay: .100s;
+    opacity: 0;
+    display: none;
+
+    @media(max-width:552px){
+      padding: 5px 20px;
+    }
+
+    &>div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &>div {
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            &:first-child i {
+                color: white;
+            }
+
+            &:last-child i {
+                color: orange;
+            }
+
+            h2 {
+                color: white;
+                font-weight: 300;
+                @media(max-width:552px){
+                  font-size: 14px;
+                }
+            }
+
+            span {
+                color: white;
+                font-size: 10px;
+            }
+        }
+
+        td {
+            color: white;
+            @media(max-width:552px){
+              font-size: 10px;
+            }
+
+
+            &:last-child i {
+                color: white;
+            }
+
+            i {
+                color: orange;
+            }
+        }
+    }
+}
+
+.Apps_container {
+    width: 100%;
+    height: auto;
+    padding: 40px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap:40px 20px;
+    display: none;
+    opacity: 0;
+    animation: showapps .5s ease forwards;
+    animation-delay: .200s;
+
+    button {
+        width: 60px;
+        aspect-ratio: 1;
+        border-radius: 15px;
+        cursor: pointer;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+
+        @media(max-width:552px){
+          width: 40px;
+          border-radius: 10px;
+        }
+
+        h3 {
+            width: 100%;
+            left: 0;
+            text-wrap: wrap;
+            color: white;
+            font-weight: 300;
+            text-transform: capitalize;
+            position: absolute;
+            text-align: center;
+            top: 105%;
+            text-align: center;
+            font-size: 12px;
+            word-wrap: break-word;
+
+            @media(max-width:552px){
+              font-size: 8px;
+            }
+        }
+    }
+}
+
+@keyframes showapps {
+    from {
+        opacity: 0;
+        scale: .5;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.Alarm_clock_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: rgb(23, 23, 23);
+    position: absolute;
+    inset: 0;
+    transform: scale(0);
+    transition: .5s;
+
+    @media(max-width:552px){
+      padding: 40px 10px;
+    }
+    .Time {
+        width: 100%;
+        text-align: center;
+        font-size: 80px;
+        transform: translateY(-150px);
+        animation: showtime 1s ease forwards;
+
+        @media(max-width:552px){
+          font-size: 40px;
+          transform: translateY(-100px);
+        }
+    }
+
+    #close {
+        width: 40px;
+        aspect-ratio: 1;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        right: 5%;
+        top: 6%;
+    }
+
+    .second_box{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        animation:showw 1s ease forwards;
+
+        h1{
+            font-size: 40px;
+            color: white;
+            @media(max-width:552px){
+              font-size: 20px;
+            }
+            
+        }
+        &>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            &>button{
+                width: 40px;
+                aspect-ratio: 1;
+                border-radius: 5px;
+                background-color: white;
+                color: rgba(0, 0, 255, 0.687);
+                font-size: 20px;
+                border-radius: 50%;
+                border: none;
+            }
+        }
+    }
+
+    &>h1 {
+        font-weight: 300;
+        color: white;
+        animation: showtitle 1s ease forwards;
+        @media(max-width:552px){
+          font-size: 20px;
+        }
+    }
+
+    &>ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        animation:showw 1s ease forwards;
+
+        li {
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(37, 36, 36);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &>div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                &>h1 {
+                    color: white;
+                    font-weight: 300;
+                    @media(max-width:552px){
+                      font-size: 20px;
+                    }
+                }
+
+                span {
+                    color: rgb(65, 64, 64);
+                    font-size: 14px;
+                }
+
+                input {
+                    width: 30px;
+                    aspect-ratio: 1;
+                    font-size: 20px;
+                    cursor: pointer;
+                    @media(max-width:552px){
+                      width: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    &>nav {
+        width: 100%;
+        animation: shownav 1s ease forwards;
+
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            @media(max-width:552px){
+              justify-content: space-between;
+            }
+
+            li {
+                overflow: hidden;
+
+                button {
+                    width: 68px;
+                    aspect-ratio: 16/8;
+                    cursor: pointer;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 5px;
+                    font-size: 11px;
+                    padding: 5px;
+                    border-radius: 10px;
+                    border: none;
+                    box-shadow: 0 0 20px inset black;
+
+                    @media(max-width:552px){
+                      width: 50px;
+                      aspect-ratio: 1;
+                      padding: 3px;
+                      font-size: 8px;
+                    }
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        object-fit: contain;
+                        @media(max-width:552px){
+                          width: 20px;
+                          height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes showtitle{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes showtime{
+    from{
+        opacity: 0;
+        scale: .2;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+@keyframes showw {
+    from{
+        opacity: 0;
+        scale: .2;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+@keyframes shownav{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Hamster_Container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    inset: 0;
+    gap: 10px;
+    padding: 20px 0 0 0;
+    transform: scale(0);
+    opacity: 0;
+    transition: .4s ease;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container {
+      width: 100%;
+    }
+  }
+  .Hamster_Container .Bonus_Box {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(22, 22, 22);
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-top: 4px solid rgb(251, 255, 0);
+    box-shadow: 0 0 60px rgb(255, 166, 0);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    top: 0;
+    animation: bonus 0.3s ease-in-out forwards;
+  }
+  @keyframes bonus {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Hamster_Container .Bonus_Box img {
+    width: 150px;
+    height: 150px;
+    -o-object-fit: contain;
+       object-fit: contain;
+
+       @media(max-width:552px){
+        width: 80px;
+        height: 80px;
+       }
+  }
+  .Hamster_Container .Bonus_Box h2,
+  .Hamster_Container .Bonus_Box h3 {
+    color: white;
+    text-transform: capitalize;
+    @media(max-width:552px){
+      font-size: 13px;
+    }
+  }
+  .Hamster_Container .Bonus_Box h2{
+    font-size: 20px;
+    @media(max-width:552px){
+      font-size: 13px;
+    }
+  }
+
+  .Hamster_Container .Bonus_Box span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    @media(max-width:552px){
+      font-size: 8px;
+    }
+  }
+  .Hamster_Container .Bonus_Box span > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    @media(max-width:552px){
+      font-size: 10px;
+    }
+  }
+  
+  .Hamster_Container .Bonus_Box span img {
+    width: 30px;
+    height: 30px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .Hamster_Container .Bonus_Box button {
+    width: 60%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid transparent;
+    transition: 0.3s;
+    background-color: #1e1d1d;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.249);
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: capitalize;
+    @media(max-width:552px){
+      width: auto;
+      font-size: 14px;
+    }
+  }
+  .Hamster_Container .Bonus_Box button:active {
+    scale: 0.9;
+    background-color: #1e1d1d;
+    color: rgb(251, 255, 0);
+    border-color: rgb(251, 255, 0);
+    box-shadow: 0 0 20px rgba(255, 166, 0, 0.56);
+  }
+  .Hamster_Container .Hamster_Registration_Box {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+  }
+  .Hamster_Container .Hamster_Registration_Box img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.764));
+    animation: img 0.3s ease-in-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+  @keyframes img {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .Hamster_Container .Hamster_Registration_Box h1 {
+    text-transform: capitalize;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: wellcome 0.3s ease-in-out forwards;
+    animation-delay: 0.3s;
+    @media(max-width:552px){
+      font-size: 14px;
+    }
+  }
+  @keyframes wellcome {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Hamster_Container .Hamster_Registration_Box input {
+    width: 80%;
+    padding: 10px 20px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-color: #1e1d1d;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.249);
+    opacity: 0;
+    animation: input-show 0.3s ease-in-out forwards;
+    animation-delay: 0.4s;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container .Hamster_Registration_Box input {
+      width: 100%;
+      font-size: 12px;
+    }
+  }
+  @keyframes input-show {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Hamster_Container .Hamster_Registration_Box input:focus {
+    border-color: rgb(251, 255, 0);
+    box-shadow: 0 0 20px rgba(255, 166, 0, 0.56);
+  }
+  .Hamster_Container .Hamster_Registration_Box button {
+    width: 60%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid transparent;
+    transition: 0.3s;
+    background-color: #1e1d1d;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.249);
+    cursor: pointer;
+    font-size: 18px;
+    animation: btn 0.3s ease-in-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    @media(max-width:552px){
+      width: auto;
+      font-size: 14px;
+    }
+  }
+  @keyframes btn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Hamster_Container .Hamster_Registration_Box button:active {
+    scale: 0.9;
+    background-color: #1e1d1d;
+    color: rgb(251, 255, 0);
+    border-color: rgb(251, 255, 0);
+    box-shadow: 0 0 20px rgba(255, 166, 0, 0.56);
+  }
+  .Hamster_Container .Hamster_Close_Box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .Hamster_Container .Hamster_Close_Box div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+  }
+  .Hamster_Container .Hamster_Close_Box button {
+    width: 45px;
+    height: 40px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+  }
+  .Hamster_Container .Hamster_Close_Box h1 {
+    font-size: 20px;
+    color: white;
+    text-transform: capitalize;
+
+    @media(max-width:552px){
+      font-size: 15px;
+    }
+  }
+  .Hamster_Container .User_Stock_Exchange_Box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    z-index: 2;
+  }
+  .Hamster_Container .User_Stock_Exchange_Box div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+  }
+  .Hamster_Container .User_Stock_Exchange_Box img {
+    width: 60px;
+    height: 60px;
+    color: white;
+    background-color: #1e1d1d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container .User_Stock_Exchange_Box img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .Hamster_Container .User_Stock_Exchange_Box h3 {
+    color: white;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container .User_Stock_Exchange_Box h3 {
+      font-size: 12px;
+    }
+  }
+  .Hamster_Container .User_Stock_Exchange_Box button {
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: rgb(27, 26, 26);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .Hamster_Container .User_Stock_Exchange_Box button img {
+    width: 20px;
+    height: 20px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container .User_Stock_Exchange_Box button img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container .User_Stock_Exchange_Box button {
+      font-size: 14px;
+    }
+  }
+  .Hamster_Container .User_Stock_Exchange_Box button:hover {
+    background-color: rgb(39, 39, 39);
+  }
+  .Hamster_Container .Hamster_Box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 15px 20px 5px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(22, 22, 22);
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-top: 4px solid rgb(251, 255, 0);
+    box-shadow: 0 0 60px rgb(255, 166, 0);
+    animation: Ham 0.3s ease-in-out forwards;
+    opacity: 0;
+    animation-delay: 0.1s;
+  }
+  @media (max-width: 552px) {
+    .Hamster_Container .Hamster_Box {
+      gap: 5px;
+    }
+  }
+  @keyframes Ham {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 10px;
+    opacity: 0;
+    animation: levelshow 0.3s ease-in-out forwards;
+    animation-delay: 0.4s;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container .Hamster_Box .Hamster_Level_Box {
+      gap: 10px;
+    }
+  }
+  @keyframes levelshow {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box div span {
+    color: white;
+    text-transform: capitalize;
+
+    @media(max-width:552px){
+      font-size: 8px;
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box div span span {
+    font-size: 7px;
+    color: gray;
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box div:nth-child(2) {
+    height: 15px;
+    border-radius: 10px;
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(64, 64, 64);
+    position: relative;
+    overflow: hidden;
+    @media(max-width:552px){
+      height: 5px;
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box div:nth-child(2) progress {
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box div:nth-child(2) progress::-webkit-progress-bar {
+    background-color: #1e1d1d;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box div:nth-child(2) progress::-webkit-progress-value {
+    background: rgb(0, 255, 81);
+    background: linear-gradient(90deg, rgb(0, 255, 64) 0%, rgb(1, 255, 171) 26%, rgba(201, 2, 190, 0.7959558824) 46%, rgba(159, 3, 148, 0.7539390756) 60%, rgba(78, 181, 242, 0.8043592437) 77%, rgb(7, 5, 138) 100%);
+    border-radius: 10px 0 0 10px;
+    -webkit-transition: width 0.5s ease;
+    transition: width 0.5s ease;
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Level_Box div:nth-child(2) progress::-moz-progress-bar {
+    background: rgb(0, 255, 81);
+    background: linear-gradient(90deg, rgb(0, 255, 64) 0%, rgb(1, 255, 171) 26%, rgba(201, 2, 190, 0.7959558824) 46%, rgba(159, 3, 148, 0.7539390756) 60%, rgba(78, 181, 242, 0.8043592437) 77%, rgb(7, 5, 138) 100%);
+    border-radius: 10px 0 0 10px;
+    -moz-transition: width 0.5s ease;
+    transition: width 0.5s ease;
+  }
+  .Hamster_Container .Hamster_Box .Hamster {
+    width: 70%;
+   aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgb(26, 13, 117);
+    background: linear-gradient(180deg, rgb(39, 27, 118) 25%, rgb(1, 36, 58) 51%, rgb(2, 2, 31) 100%);
+    border: none;
+    position: relative;
+    display: flex;
+    outline: none;
+    justify-content: center;
+    box-shadow: 0 0 90px rgba(0, 0, 0, 0.766);
+    align-items: center;
+    transition: 0.4s;
+    opacity: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    animation: Hamster 0.3s ease-in-out forwards;
+    animation-delay: 0.5s;
+    @media(max-width:552px){
+      max-width: 150px;
+      aspect-ratio: 1;
+    }
+  }
+
+  @keyframes Hamster {
+    0% {
+      opacity: 0;
+      scale: 0;
+    }
+    50% {
+      opacity: 1;
+      scale: 1.1;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster span {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 40px;
+    z-index: 3;
+    font-weight: 700;
+    opacity: 0;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container .Hamster_Box .Hamster span {
+      font-size: 25px;
+    }
+  }
+  @keyframes show {
+    0% {
+      opacity: 0;
+      top: 50%;
+    }
+    50% {
+      opacity: 1;
+      top: -10%;
+      scale: 1.3;
+    }
+    100% {
+      opacity: 0;
+      top: -10%;
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster:active {
+    transform: scale(1.05);
+  }
+  .Hamster_Container .Hamster_Box .Hamster img {
+    width: 90%;
+    height: 90%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(0, 50, 80);
+    box-shadow: inset 0 0 80px black;
+    background: linear-gradient(90deg, rgb(0, 50, 80) 25%, rgb(1, 56, 88) 51%, rgb(2, 2, 31) 100%);
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Energy_Boost_Box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: boost 0.3s ease-in-out forwards;
+    opacity: 0;
+    animation-delay: 0.6s;
+  }
+  @keyframes boost {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Energy_Boost_Box button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    background: transparent;
+    color: white;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+    text-transform: capitalize;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Container .Hamster_Box .Hamster_Energy_Boost_Box button {
+      font-size: 10px;
+      gap: 5px;
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Energy_Boost_Box button i {
+    color: orange;
+    font-size: 25px;
+    @media(max-width:552px){
+      font-size: 12px;
+    }
+  }
+  .Hamster_Container .Hamster_Box .Hamster_Energy_Boost_Box button img {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: -60%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    padding: 10px;
+
+    @media(max-width:552px){
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      left: -20%;
+    }
+  }
+  .Hamster_Container .Mine_Box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px 10px 5px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(22, 22, 22);
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-top: 4px solid rgb(251, 255, 0);
+    box-shadow: 0 0 60px rgb(255, 166, 0);
+    animation: Ham 0.3s ease-in-out forwards;
+    @media(max-width:552px){
+      gap: 5px;
+    }
+  }
+  .Hamster_Container .Claim_Boxus_Box {
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    z-index: 10;
+  }
+  .Hamster_Container .Claim_Boxus_Box img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.479));
+  }
+  .Hamster_Container .Claim_Boxus_Box h2 {
+    color: wheat;
+    text-align: center;
+  }
+  .Hamster_Container .Claim_Boxus_Box span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    color: white;
+    text-transform: capitalize;
+  }
+  .Hamster_Container .Claim_Boxus_Box span img {
+    width: 25px;
+    height: 25px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .Hamster_Container .Claim_Boxus_Box button {
+    width: 60%;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background-color: rgb(36, 23, 149);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.585);
+    color: white;
+    transition: 0.3s;
+  }
+  .Hamster_Container .Claim_Boxus_Box button:active {
+    scale: 0.9;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.585);
+  }
+  
+  .Hour_Coin_Box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 0 10px;
+    opacity: 0;
+    animation-delay: 0.2s;
+    animation: HourShow 0.3s ease-in-out forwards;
+  }
+  @keyframes HourShow {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box {
+      gap: 5px;
+    }
+  }
+  .Hour_Coin_Box div {
+    flex: 25%;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 15px;
+    background-color: rgb(34, 34, 34);
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div {
+      padding: 10px;
+      height: 50px;
+    }
+  }
+  .Hour_Coin_Box div:first-child span:first-child {
+    color: orange;
+    font-size: 9px;
+    font-weight: 600;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div:first-child span:first-child {
+      font-size: 7px;
+    }
+  }
+  .Hour_Coin_Box div:first-child span:last-child {
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div:first-child span:last-child {
+      font-size: 7px;
+    }
+  }
+  .Hour_Coin_Box div:first-child span:last-child img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div:first-child span:last-child img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .Hour_Coin_Box div:nth-child(2) span:first-child {
+    color: rgb(85, 0, 255);
+    font-size: 9px;
+    font-weight: 600;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div:nth-child(2) span:first-child {
+      font-size: 7px;
+    }
+  }
+  .Hour_Coin_Box div:nth-child(2) span:last-child {
+    color: white;
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div:nth-child(2) span:last-child {
+      font-size: 7px;
+    }
+  }
+  .Hour_Coin_Box div:last-child span:first-child {
+    color: rgb(68, 255, 0);
+    font-size: 9px;
+    font-weight: 600;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div:last-child span:first-child {
+      font-size: 7px;
+    }
+  }
+  .Hour_Coin_Box div:last-child span:last-child {
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div:last-child span:last-child {
+      font-size: 7px;
+    }
+  }
+  .Hour_Coin_Box div:last-child span:last-child img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hour_Coin_Box div:last-child span:last-child img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+  .Hamster_Coin_Count {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    animation-delay: 0.3s;
+    animation: CoinShow 0.3s ease-in-out forwards;
+  }
+  @keyframes CoinShow {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Hamster_Coin_Count img {
+    width: 50px;
+    height: 50px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  @media (max-width: 552px) {
+    .Hamster_Coin_Count img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .Hamster_Coin_Count span {
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Hamster_Coin_Count span {
+      font-size: 20px;
+    }
+  }
+  
+  .Mine_Card_Filter_Box {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: #1e1d1d;
+    border-radius: 10px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.28);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    @media(max-width:552px){
+      gap: 0;
+    }
+  }
+  .Mine_Card_Filter_Box > button {
+    width: 100px;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.4s;
+
+    @media(max-width:552px){
+      width: 55px;
+      font-size: 7px;
+    }
+  }
+  .Mine_Card_Filter_Box > button.active {
+    background-color: rgb(19, 19, 19);
+  }
+
+
+  .Cards_Box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .Cards_Box .special-card {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1e1d1d;
+    padding: 20px;
+    gap: 15px;
+    animation: card 0.4s ease-in-out forwards;
+    opacity: 0;
+  }
+  @keyframes card {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Cards_Box .special-card > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Cards_Box .special-card > div:first-child {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Cards_Box .special-card > div h5 {
+    color: white;
+    font-size: 12px;
+  }
+  .Cards_Box .special-card > div span {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .Cards_Box .special-card > div span img {
+    width: 20px;
+    height: 20px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .Cards_Box .special-card > div img {
+    width: 80px;
+    height: 80px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .Cards_Box .special-card > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .Cards_Box .special-card > div > div h5 {
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .Cards_Box .special-card > div > div span {
+    color: rgb(139, 139, 139);
+    font-size: 10px;
+  }
+  .Cards_Box .Card {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1d1d;
+    border-radius: 10px;
+    flex-direction: column;
+    animation: card 0.4s ease-in-out forwards;
+    opacity: 0;
+  }
+  @keyframes card {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Cards_Box .Card > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Cards_Box .Card > div h5 {
+    color: white;
+    font-weight: 100;
+  }
+  .Cards_Box .Card > div span {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .Cards_Box .Card > div span img {
+    width: 20px;
+    height: 20px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .Cards_Box .Card > div img {
+    width: 40px;
+    height: 60px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .Cards_Box .Card > div div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .Cards_Box .Card > div div h5 {
+    color: white;
+    text-transform: capitalize;
+    font-size: 10px;
+  }
+  .Cards_Box .Card > div div span {
+    color: rgb(139, 139, 139);
+    font-size: 10px;
+  }
+  
+  .List {
+    width: auto;
+    height: auto;
+    background-color: rgb(32, 32, 32);
+    padding: 5px 15px;
+    border-radius: 15px;
+    animation: list 0.3s ease-in-out forwards;
+    opacity: 0;
+    animation-delay: 0.7s;
+  }
+  @keyframes list {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .List ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .List ul {
+      gap: 5px;
+    }
+  }
+  .List ul li {
+    width: 50px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  @media (max-width: 552px) {
+    .List ul li {
+      width: 40px;
+    }
+  }
+  .List ul li > button {
+    width: 100%;
+    display: block;
+    padding: 5px 10px;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    gap: 5px;
+    color: white;
+    background-color: transparent;
+    text-transform: capitalize;
+    font-size: 10px;
+    overflow: hidden;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .List ul li > button {
+      padding: 5px 10px;
+      font-size: 7px;
+    }
+  }
+  .List ul li > button i {
+    font-size: 20px;
+    color: gray;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .List ul li > button i {
+      font-size: 20px;
+    }
+  }
+  .List ul li > button img {
+    width: 20px;
+    height: 20px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .List ul li > button img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  .Boost_Box {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    z-index: 5;
+    animation: showare 0.3s ease-in-out forwards;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .Boost_Box {
+      width: 100%;
+    }
+  }
+  @keyframes showare {
+    from {
+      opacity: 0;
+      scale: 0;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  .Boost_Box #Boost_Box_Close_Btn {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+  }
+  .Boost_Box > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    background-color: transparent;
+  }
+  .Boost_Box > div:first-child div {
+    justify-content: center;
+    background-color: transparent;
+  }
+  .Boost_Box > div:first-child div div {
+    align-items: center;
+    background-color: transparent;
+  }
+  .Boost_Box > div h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    gap: 10px;
+  }
+  .Boost_Box > div span {
+    color: white;
+    font-weight: 600;
+  }
+  .Boost_Box > div img {
+    width: 40px;
+    height: 40px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .Boost_Box > div:nth-child(2) > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    padding: 7px 20px;
+    gap: 15px;
+  }
+  .Boost_Box > div:nth-child(2) > div:nth-child(2) {
+    background-color: rgb(34, 34, 34);
+  }
+  .Boost_Box > div:nth-child(2) > div:nth-child(3) {
+    background-color: rgb(34, 34, 34);
+  }
+  .Boost_Box > div:nth-child(2) > div i {
+    color: rgb(74, 74, 74);
+  }
+  .Boost_Box > div:nth-child(2) > div button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .Boost_Box > div:nth-child(2) > div button div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .Boost_Box > div:nth-child(2) > div button div span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    text-transform: capitalize;
+  }
+  .Boost_Box > div:nth-child(2) > div button div span img {
+    width: 20px;
+    height: 20px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  
+  .MultitapLevel_Box,
+  .EnergyLevel_Box {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    opacity: 0;
+    background-color: rgb(18, 18, 18);
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-top: 4px solid rgb(251, 255, 0);
+    box-shadow: 0 0 60px rgb(255, 166, 0);
+    padding: 34px 10px;
+    animation: showbox 0.3s ease-in-out forwards;
+  }
+  @media (max-width: 552px) {
+    .MultitapLevel_Box,
+    .EnergyLevel_Box {
+      width: 100%;
+      height: 460px;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 380px) {
+    .MultitapLevel_Box,
+    .EnergyLevel_Box {
+      width: 100%;
+      height: 400px;
+      animation: showbox2 0.3s ease-in-out forwards;
+    }
+    @keyframes showbox2 {
+      from {
+        opacity: 0;
+        top: 100%;
+      }
+      to {
+        opacity: 1;
+        top: 40%;
+      }
+    }
+  }
+  @keyframes showbox {
+    from {
+      opacity: 0;
+      top: 100%;
+    }
+    to {
+      opacity: 1;
+      top: 50%;
+    }
+  }
+  .MultitapLevel_Box .close_btn,
+  .MultitapLevel_Box .close_btn2,
+  .EnergyLevel_Box .close_btn,
+  .EnergyLevel_Box .close_btn2 {
+    position: absolute;
+    top: 5%;
+    right: 15%;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+  }
+  .MultitapLevel_Box img,
+  .EnergyLevel_Box img {
+    width: 120px;
+    height: 120px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  @media (min-width: 320px) and (max-width: 552px) {
+    .MultitapLevel_Box img,
+    .EnergyLevel_Box img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .MultitapLevel_Box h1,
+  .EnergyLevel_Box h1 {
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .MultitapLevel_Box p,
+  .EnergyLevel_Box p {
+    text-align: center;
+    color: white;
+    font-size: 13px;
+  }
+  .MultitapLevel_Box h3,
+  .EnergyLevel_Box h3 {
+    color: white;
+  }
+  .MultitapLevel_Box h2,
+  .EnergyLevel_Box h2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .MultitapLevel_Box h2 img,
+  .EnergyLevel_Box h2 img {
+    width: 30px;
+    height: 30px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .MultitapLevel_Box #Tap_Buy_Btn,
+  .MultitapLevel_Box #Energy_Buy_Btn,
+  .EnergyLevel_Box #Tap_Buy_Btn,
+  .EnergyLevel_Box #Energy_Buy_Btn {
+    width: 60%;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background-color: rgb(36, 23, 149);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.585);
+    color: white;
+    transition: 0.3s;
+  }
+  .MultitapLevel_Box #Tap_Buy_Btn:active,
+  .MultitapLevel_Box #Energy_Buy_Btn:active,
+  .EnergyLevel_Box #Tap_Buy_Btn:active,
+  .EnergyLevel_Box #Energy_Buy_Btn:active {
+    scale: 0.9;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.585);
+  }/*# sourceMappingURL=stle.css.map */
+
+
+
+  /* //.................................. */
+
+  .Music_App{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    padding: 40px 10px;
+    opacity: 0;
+    transform: scale(0);
+    gap: 20px;
+    background-color: #1e1d1d;
+    transition: .5s ease;
+    #close_music_app{
+        cursor: pointer;
+        font-size: 20px;
+        color: white;
+        position: absolute;
+        right: 5%;
+        background-color: transparent;
+        border: none;
+        top: 5%;
+    }
+
+
+    &>h1{
+        font-size: 20px;
+        color: white;
+    }
+    &>ul{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background-color: rgb(42, 42, 42);
+
+        li{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #343434;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.358);
+            border-radius: 10px;
+
+            @media(max-width:552px){
+              padding: 5px;
+            }
+
+            &>div{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            img{
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+
+                @media(max-width:552px){
+                 width: 40px;
+                 height: 40px;
+                }    
+            }
+
+            audio{
+                width: 150px;
+                display: none;
+                visibility: hidden;
+            }
+            span{
+                color: white;
+                @media(max-width:552px){
+                  font-size: 12px;
+                }
+    
+                /* font-size: 20px; */
+            }
+
+            button{
+                width: 40px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                background-color: #181818;
+                color: white;
+                font-size: 20px;
+
+                @media(max-width:552px){
+                  width: 30px;
+                  font-size: 15px;
+                }
+    
+            }
+        }
+    }
+  }
+  
+
+  .Contact_app{
+    width: 100%;
+    height: 100%;
+    background-color: #1e1d1d;
+    position: absolute;
+    padding: 40px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    transition: .4s ease;
+    opacity: 0;
+    transform: scale(0);
+
+    h1{
+        color: white;
+        font-size: 20px;
+    }
+    #close_Contact_app{
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        cursor: pointer;
+        font-size: 20px;
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+
+    ul{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        li{
+            width: 100%;
+            padding: 10px;
+            background-color: #353434;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.358);
+            span{
+                color: white;
+            }
+
+            &>a{
+                text-decoration: none;
+                color: white;
+                display: block;
+                width: 40px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background-color: green;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+    }
+  }
+
+  .Gallery_app{
+    width: 100%;
+    height: 100%;
+    background-color: #181818;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    position: absolute;
+    inset: 0;
+    transition: .4s ease;
+    opacity: 0;
+    transform: scale(0);
+
+    h1{
+        color: white;
+        font-size: 20px;
+    }
+    #close_Gallery_app{
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        cursor: pointer;
+        font-size: 20px;
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+
+    .Gallery{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+
+        img{
+            width: 140px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: .4s ease;
+            box-shadow:  0 15px 20px rgba(0, 0, 0, 0.632);
+
+            @media(max-width:552px){
+              width: 80px;
+            }
+        }
+    }
+  }
+
+  .Camera_app{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s ease;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    background-color: #181818;
+
+    #close_camera_app{
+        position: absolute;
+        right: 10%;
+        top: 5%;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        background-color: transparent;
+        border: none;
+        z-index: 3;
+    }
+
+    video{
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
+        background-color: black;
+    }
+
+    &>div{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        padding:20px;
+
+        img{
+            width: 50px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid wheat;
+        }
+        canvas{
+            width: 50px;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 50%;
+            object-fit: cover;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        button{
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            border: 8px double rgb(80, 80, 80);
+            position: absolute;
+            left: 42%;
+            cursor: pointer;
+        }
+
+
+    }
+   
+  }
