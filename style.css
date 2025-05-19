@@ -60,7 +60,7 @@ body{
     height: 100dvh;
   }
   .Phone_container{
-    width: 95%;
+    width: 80%;
     border-radius: 40px;
     border: 10px solid rgb(42, 42, 42);
     margin: 60px auto;
